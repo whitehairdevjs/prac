@@ -8,7 +8,11 @@
     </select>
 
     <select id="findById" parameterType="long" resultType="com.example.prac.entity.User">
-        SELECT * FROM user_info WHERE id = #{id}
+        /* mapper.UserMapper 테스트용 유저 매퍼 */
+        SELECT
+            *
+        FROM user_info
+        WHERE id = #{id}
     </select>
 
     <insert id="insertUser" parameterType="com.example.prac.entity.User">
