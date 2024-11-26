@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.prac.mapper.BatchMapper">
+
+    <select id="selectBatchList" parameterType="hashMap" resultType="Batch">
+        select
+            bl.service_name     as service_name
+             , bl.method_name   as method_name
+             , bl.profile_type  as profile_type
+             , bl.cron          as cron
+             , bl.use_yn        as use_yn
+             , bl.description   as description
+        from batch_list bl
+        where 1=1
+        and use_yn = 'Y'
+        and profile_type = #{profile}
+    </select>
+
+</mapper>
